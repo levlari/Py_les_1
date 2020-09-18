@@ -1,17 +1,19 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-<head>
- <title>{% block title %}{% endblock %}</title>
- <link href="{% static "css/blog.css" %}" rel="stylesheet">
+{% load blog_tags %}  
+{% load static %}  
+<!DOCTYPE html>  
+<html>  
+<head>  
+ <title>{% block title %}{% endblock %}</title>  
+ <link href="{% static 'css/blog.css' %}" rel="stylesheet">  
 </head>
-<body>
- <div id="content">
- {% block content %}{% endblock %}
+<body>  
+ <div id="content">  
+  {% block content %}  
+      {% endblock %}  
+    </div>  
+ <div id="sidebar">  
+ <h2>My blog</h2>  
+ <p>This is my blog. I've written {% total_posts %} posts so far.</p>  
  </div>
- <div id="sidebar">
- <h2>My blog</h2>
- <p>This is my blog.</p>
- </div>
-</body>
+</body>  
 </html>
